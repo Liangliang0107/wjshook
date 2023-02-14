@@ -6,7 +6,9 @@
 
 2. 目前 测试 通过 的算法 有 ``AES`` `` DES``  ``3DES``  ``MD5``  ``SHA1``  ``SHA3``  ``SHA224``  ``SHA256``  ``SHA384``  ``SHA512``  ``RIPEMD160``  ``HMAC系列``  ``PBKDF2``  ``EvpKDF``  ``RSA``
 
-3. 并没有大批量测试  有bug 很正常
+3. **增加插件功能 可以按照自己的需要 处理JS 文件 然后在进行替换**
+
+4. 并没有大批量测试  有bug 很正常
 
 ## 有问题请联系 QQ 2035776757    [视频教程](https://www.bilibili.com/video/BV1Q84y1H72j/?vd_source=90380208985bfbe80c682a5257e9ecf6)
 
@@ -80,6 +82,24 @@ node ./main.js -i
 
 
 
+## 四、插件功能
+
+```javascript
+function exp(JsCode){
+    JsCode +="Console.log('我是插件功能')"
+    return JsCode;
+}
+module.exports = {
+    url: "",  // 针对某个url生效  填空 全部生效
+    exp: exp  // 这个exp是 处理函数 
+}
+```
+
+#### 插件功能调试极验滑块/点选   可以看到 加密方法的 参数全部导出了  还有key之类的 这个为我们剩下了很多 找key的时间
+
+![image-20230214202532142](./assets/image-20230214202532142.png)
+
+![image-20230214202351958](./assets/image-20230214202351958.png)
 
 # 【转载声明】转载请注明原始出处和作者
 
